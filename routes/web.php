@@ -18,13 +18,8 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', HomeController::class);
 
-Route::get('encuestas', EncuestaController::class);
-
-Route::get('encuestas/create', function () {
-    return "en esta pagina se puede crear un formulario";
-});
-
-Route::get('encuestas/{encuesta}', function($encuesta){
-    return "bienvenido a la encuesta: $encuesta ";
-
+Route::controller(EncuestaController::class)->group(function(){
+    Route::get('encuestas', 'index');
+    Route::get('encuestas/create', 'create');
+    Route::get('encuestas/{encuesta}', 'show');
 });

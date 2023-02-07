@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 class EncuestaController extends Controller
 {
     public function index(){
-        return "inicio";
+        return view('encuestas.index');
     }
 
     public function create(){
-        return "en esta pagina se puede crear un formulario";
+        return view('encuestas.create');
     }
 
     public function show ($encuesta){
-        return "bienvenido a la encuesta: $encuesta ";
+        return view('encuestas.show', compact('encuesta'));
     }
 }
