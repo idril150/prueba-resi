@@ -12,11 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use app\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    /*return view('welcome');*/
-    return "holi crayoli";
-});
+Route::get('/', HomeController::class);
 
 Route::get('encuestas', function(){
     return "holi";
