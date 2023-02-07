@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\EncuestaController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,13 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Controllers\HomeController;
+
+
 
 Route::get('/', HomeController::class);
 
-Route::get('encuestas', function(){
-    return "holi";
-});
+Route::get('encuestas', EncuestaController::class);
 
 Route::get('encuestas/create', function () {
     return "en esta pagina se puede crear un formulario";
