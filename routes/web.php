@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', HomeController::class);
 
 Route::controller(EncuestaController::class)->group(function(){
-    Route::get('encuestas', 'index');
+    Route::get('encuestas', 'index')->name('encuestas.home'); 
     Route::get('encuestas/create', 'create');
     Route::get('encuestas/{encuesta}', 'show');
 });

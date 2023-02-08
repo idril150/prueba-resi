@@ -19,6 +19,9 @@ class roleseeder extends Seeder
         $Role1 = Role::create(['name' => 'Admin']);
         $Role2 = Role::ccreate(['name' => 'JefAr']);
 
-        Permission::create(['name' => 'kk']);
+        Permission::create(['name' => 'encuestas.categories']);
+        Permission::create(['name' => 'encuestas.categories']);
+        Permission::create(['name' => 'encuestas.categories']);
+        Permission::create(['name' => 'encuestas.categories']);
     }
 }
