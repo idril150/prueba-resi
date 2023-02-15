@@ -20,6 +20,11 @@ Route::get('/', HomeController::class);
 
 
 Route::get('encuestas', [EncuestaController::class,'index'])->name('encuestas.index'); 
+
 Route::get('encuestas/create', [EncuestaController::class,'create'])->name('encuestas.create'); 
+Route::post('encuestas', [EncuestaController::class]{
+    
+});
+
 Route::get('encuestas/{id}', [EncuestaController::class,'show'])->name('encuestas.show');
 

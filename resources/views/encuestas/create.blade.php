@@ -4,4 +4,5 @@
 
 @section('content')
     <h1>en esta pagina se puede crear un formulario</h1>
+    
 @endsection
