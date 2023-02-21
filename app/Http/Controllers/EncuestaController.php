@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Encuesta;
 use Illuminate\Http\Request;
 
+use App\Http\Requests\StoreEncuesta;
+
 class EncuestaController extends Controller
 {
     public function index(){
@@ -18,12 +20,19 @@ class EncuestaController extends Controller
         return view('encuestas.create');
     }
 
-    public function store(Request $request){
+    public function store(StoreEncuesta $request){
+
         $encuesta = new Encuesta();
-        $encuesta->enc_name = $request->name;
+        $encuesta->name = $request->name;
         $encuesta->periodo = $request->periodo;
         $encuesta->estado = $request->estado;
+
         $encuesta->save();
+
+       /* return $request->all();
+
+        $encuesta = Encuesta::create([$request->all()]);*/
+
         return redirect()->route('encuestas.show', $encuesta);
     }
 
@@ -32,11 +41,19 @@ class EncuestaController extends Controller
     }
 
     public function edit(Encuesta $encuesta){
+        
         return view('encuestas.edit', compact('encuesta'));
     }
 
     public function update(Request $request,Encuesta $encuesta){
-        $encuesta->enc_name = $request->name;
+
+        $request->validate([
+            'name' => 'required',
+            'periodo' => 'required',
+            'estado' => 'required'
+        ]);
+
+        $encuesta->name = $request->name;
         $encuesta->periodo = $request->periodo;
         $encuesta->estado = $request->estado;
 

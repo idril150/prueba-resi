@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('encuestas', function (Blueprint $table) {
             $table->id();
-            $table->string('enc_name');
+            $table->string('name');
             $table->string('periodo');
             $table->string('estado');
             $table->timestamps();

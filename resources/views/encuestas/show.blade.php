@@ -1,9 +1,9 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Encuesta ' . $encuesta->enc_name)
+@section('title', 'Encuesta ' . $encuesta->name)
 
 @section('content')
-    <h1>bienvenido a la encuesta: {{$encuesta->enc_name}}</h1>
+    <h1>bienvenido a la encuesta: {{$encuesta->name}}</h1>
     <a href="{{route('encuestas.index')}}"><-- volver a las encuestas</a>
     
     <p><strong>periodo: </strong>{{$encuesta->periodo}}</p>

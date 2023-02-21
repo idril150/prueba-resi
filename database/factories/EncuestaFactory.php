@@ -17,7 +17,7 @@ class EncuestaFactory extends Factory
     public function definition()
     {
         return [
-            'enc_name' => $this->faker->sentence(),
+            'name' => $this->faker->sentence(),
             'periodo' => $this->faker->paragraph(),
             'estado' => $this->faker->randomElement(['activo','inactivo'])
         ];

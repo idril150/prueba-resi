@@ -9,18 +9,33 @@
         @method('put')
         <label>
             Nombre:
-            <input type="text" name="name" value="{{$encuesta->enc_name}}">
+            <input type="text" name="name" value="{{old('name',$encuesta->name)}}">
         </label>
+        @error('name')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
         <br>
         <label>
             periodo:
-            <textarea name="periodo" rows="5">{{$encuesta->periodo}}</textarea>
+            <textarea name="periodo" rows="5">{{old('periodo',$encuesta->periodo)}}</textarea>
         </label>
+        @error('periodo')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
         <br>
         <label>
             estado:
-            <input type="text" name="estado" value="{{$encuesta->estado}}">
+            <input type="text" name="estado" value="{{old('estado',$encuesta->estado)}}">
         </label>
+        @error('estado')
+            <br>
+            <small>*{{$message}}</small>
+            <br>
+        @enderror
         <br>
         <button type="submit">actualizar formulario</button>
     </form>

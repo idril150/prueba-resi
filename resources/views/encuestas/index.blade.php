@@ -8,7 +8,7 @@
     <ul>
         @foreach ($encuestas as $encuesta)
             <li>
-                <a href="{{route('encuestas.show',$encuesta->id)}}">{{$encuesta->enc_name}}</a>
+                <a href="{{route('encuestas.show',$encuesta->id)}}">{{$encuesta->name}}</a>
             </li>
         @endforeach
     </ul>
