@@ -9,5 +9,6 @@ class Encuesta extends Model
 {
     use HasFactory;
 
-    
+    //protected $fillable = ['name', 'periodo', 'estado'];
+    protected $guarded = [];
 }

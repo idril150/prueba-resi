@@ -20,18 +20,9 @@ class EncuestaController extends Controller
         return view('encuestas.create');
     }
 
-    public function store(StoreEncuesta $request){
+    public function store(StoreEncuesta $request){     
 
-        $encuesta = new Encuesta();
-        $encuesta->name = $request->name;
-        $encuesta->periodo = $request->periodo;
-        $encuesta->estado = $request->estado;
-
-        $encuesta->save();
-
-       /* return $request->all();
-
-        $encuesta = Encuesta::create([$request->all()]);*/
+        $encuesta = Encuesta::create($request->all());
 
         return redirect()->route('encuestas.show', $encuesta);
     }
@@ -53,11 +44,13 @@ class EncuestaController extends Controller
             'estado' => 'required'
         ]);
 
-        $encuesta->name = $request->name;
+       /* $encuesta->name = $request->name;
         $encuesta->periodo = $request->periodo;
         $encuesta->estado = $request->estado;
 
-        $encuesta->save();
+        $encuesta->save();*/
+
+        $encuesta->update($request->all());
         return redirect()->route('encuestas.show', $encuesta);
     }
 }
