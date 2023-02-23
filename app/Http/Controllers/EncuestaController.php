@@ -43,14 +43,13 @@ class EncuestaController extends Controller
             'periodo' => 'required',
             'estado' => 'required'
         ]);
-
-       /* $encuesta->name = $request->name;
-        $encuesta->periodo = $request->periodo;
-        $encuesta->estado = $request->estado;
-
-        $encuesta->save();*/
-
+        
         $encuesta->update($request->all());
         return redirect()->route('encuestas.show', $encuesta);
+    }
+
+    public function destroy(Encuesta $encuesta){
+        $encuesta->delete();
+        return redirect()->route('encuestas.index');
     }
 }

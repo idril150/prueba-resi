@@ -11,5 +11,11 @@
     <br>
     <a href="{{route('encuestas.edit',$encuesta)}}">Editar encuesta</a>
 
+    <form action="{{route('encuestas.destroy', $encuesta)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
+
 @endsection
 

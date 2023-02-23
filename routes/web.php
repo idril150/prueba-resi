@@ -28,3 +28,5 @@ Route::get('encuestas/{encuesta}', [EncuestaController::class,'show'])->name('en
 Route::get('encuestas/{encuesta}/edit', [EncuestaController::class,'edit'])->name('encuestas.edit');
 
 Route::put('encuestas/{encuesta}', [EncuestaController::class,'update'])->name('encuestas.update');
+
+Route::delete('encuestas/{encuesta}', [EncuestaController::class,'destroy']) -> name('encuestas.destroy');
