@@ -15,11 +15,10 @@ use App\Http\Controllers\HomeController;
 */
 
 
-
 Route::get('/', HomeController::class);
 
 
-Route::get('encuestas', [EncuestaController::class,'index'])->name('encuestas.index'); 
+/*Route::get('encuestas', [EncuestaController::class,'index'])->name('encuestas.index'); 
 
 Route::get('encuestas/create', [EncuestaController::class,'create'])->name('encuestas.create'); 
 Route::post('encuestas', [EncuestaController::class,'store'])->name('encuestas.store');
@@ -29,4 +28,6 @@ Route::get('encuestas/{encuesta}/edit', [EncuestaController::class,'edit'])->nam
 
 Route::put('encuestas/{encuesta}', [EncuestaController::class,'update'])->name('encuestas.update');
 
-Route::delete('encuestas/{encuesta}', [EncuestaController::class,'destroy']) -> name('encuestas.destroy');
+Route::delete('encuestas/{encuesta}', [EncuestaController::class,'destroy']) -> name('encuestas.destroy');*/
+
+Route::resource('encuestas', EncuestaController::class);

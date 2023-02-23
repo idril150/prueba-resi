@@ -4,6 +4,8 @@
 
 @section('content')
     <h1>en esta pagina se puede editar un formulario</h1>
+    <a href="{{route('encuestas.show',$encuesta->id)}}"><-- volver a la encuesta</a>
+    <br>
     <form action="{{route('encuestas.update', $encuesta)}}" method="post">
         @csrf
         @method('put')

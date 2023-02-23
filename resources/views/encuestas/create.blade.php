@@ -4,6 +4,8 @@
 
 @section('content')
     <h1>en esta pagina se puede crear un formulario</h1>
+    <a href="{{route('encuestas.index')}}"><-- volver a las encuestas</a>
+    <br>
     <form action="{{route('encuestas.store')}}" method="POST">
         @csrf
         <label>
