@@ -3,6 +3,10 @@
 use App\Http\Controllers\EncuestaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\User;
+
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +24,10 @@ Route::get('/', HomeController::class)->name('home');
 Route::resource('encuestas', EncuestaController::class); 
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
+
+Route::get('contactanos', function () {
+    $correo = new ContactanosMailable;
+
+    Mail::to('ebibari1803@gmail.com')->send($correo);
+    return "mensaje enviado";
+});
