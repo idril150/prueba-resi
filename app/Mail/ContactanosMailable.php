@@ -13,6 +13,8 @@ class ContactanosMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $contacto;
+
    
 
     /**
@@ -20,9 +22,9 @@ class ContactanosMailable extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($contacto)
     {
-        //
+        $this->contacto = $contacto;
     }
 
     /**

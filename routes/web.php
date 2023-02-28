@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\EncuestaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -25,9 +26,6 @@ Route::resource('encuestas', EncuestaController::class);
 
 Route::view('nosotros', 'nosotros')->name('nosotros');
 
-Route::get('contactanos', function () {
-    $correo = new ContactanosMailable;
+Route::get('contactanos', [ContactanosController::class, 'index'])->name('contactanos.index');
 
-    Mail::to('ebibari1803@gmail.com')->send($correo);
-    return "mensaje enviado";
-});
+Route::post('contactanos', [ContactanosController::class, 'store'])->name('contactanos.store');
